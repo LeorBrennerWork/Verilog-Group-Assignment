@@ -15,7 +15,7 @@ wire [31:0] p_out;
 reg [47:0] sbox_in;
 wire [47:0] key_schedule [0:15];
 
-always @ (posedge(clk)) : round_final_process
+always @ (posedge(clk))
 begin
     if (rst)
     begin
@@ -35,12 +35,12 @@ e_function u_e_function (
     .right(in_right),
     .selected(out_e_function)
 );
-sbox u_sbox (
+    sbox u_sbox (  //need to get I/Os for the sbox function
     .clk(clk), 
     .rst(rst),
     .input(sbox_in)
 );
-p_function u_p_function (
+    p_function u_p_function ( //need to get I/Os for the p function
     .clk(clk), 
     .rst(rst),
     .out(p_out)
