@@ -4,7 +4,6 @@
 `default_nettype none
 
 module round (
-    input wire clk, rst,
     input wire [47:0] subkey,
     input wire [31:0] in_left, in_right, 
     output reg [31:0] out_left, out_right
@@ -15,19 +14,8 @@ wire [31:0] p_out;
 reg [47:0] sbox_in;
 wire [47:0] key_schedule [0:15];
 
-always @ (posedge(clk))
-begin
-    if (rst)
-    begin
-        out_left <= 32'b0;
-        out_right <= 32'b0;
-    end
-    else
-    begin
-        out_left <= in_right;
-        out_right <= in_left ^ p_out;
-    end
-end
+assign out_left <= in_right;
+assign out_right <= in_left ^ p_out;
 
 e_function u_e_function (
     .clk(clk), 
