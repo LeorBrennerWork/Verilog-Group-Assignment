@@ -4,7 +4,6 @@
 `default_nettype none
 
 module e_function (
-    input wire clk, rst,
     input wire [31:0] right,
     output wire [47:0] selected
 );
