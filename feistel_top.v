@@ -4,7 +4,6 @@
 `default_nettype none
 
 module feistel_network (
-    input wire clk, rst,
     input wire [63:0] plntxt,
     input wire [47:0] key_schdl_0,
     input wire [47:0] key_schdl_1,
