@@ -21,7 +21,7 @@ module feistel_network (
     input wire [47:0] key_schdl_13,
     input wire [47:0] key_schdl_14,
     input wire [47:0] key_schdl_15,
-    output reg [63:0] cphrtxt
+    output wire [63:0] cphrtxt
 );
 
 wire [47:0] key_schedule [0:15];
