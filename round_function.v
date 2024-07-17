@@ -6,12 +6,12 @@
 module round (
     input wire [47:0] subkey,
     input wire [31:0] in_left, in_right, 
-    output reg [31:0] out_left, out_right
+    output wire [31:0] out_left, out_right
 );
 
 wire [47:0] out_e_function;
 wire [31:0] p_out;
-reg [47:0] sbox_in;
+wire [47:0] sbox_in;
 wire [47:0] key_schedule [0:15];
 
 assign out_left <= in_right;
