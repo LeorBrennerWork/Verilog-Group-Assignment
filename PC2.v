@@ -1,3 +1,5 @@
+//shmuel Afelbaum
+//18.07..2024
 module PC2 (
     input [55:0] pc1_key,
     output [47:0] subkey
