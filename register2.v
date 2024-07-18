@@ -1,3 +1,5 @@
+//yinon zadok
+//18.07.2024
 `default_nettype none 
 `timescale 1 ns / 1 ps
 module register2
