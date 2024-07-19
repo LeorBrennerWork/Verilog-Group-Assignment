@@ -70,24 +70,24 @@ key_schedule iner_key
 
 feistel iner_feistel
 (
-.plaintext (plaintext_w), //in from top level to feistal
-.kf1 (kw1),
-.kf2(kw2),
-.kf3(kw3),
-.kf4(kw4),
-.kf5(kw5),
-.kf6(kw6),
-.kf7(kw7),
-.kf8(kw8),
-.kf9(kw9),
-.kf10(kw10),
-.kf11(kw11),
-.kf12(kw12),
-.kf13(kw13),
-.kf14(kw14),
-.kf15(kw15),
-.kf16(kw16), //in from top level to feistal
-.ciphertext (ciphertext_w) //out from feistal in to top level
+.plntxt (plaintext_w), //in from top level to feistal
+.subkey_0 (kw1),
+.subkey_1(kw2),
+.subkey_2(kw3),
+.subkey_3(kw4),
+.subkey_4(kw5),
+.subkey_5(kw6),
+.subkey_6(kw7),
+.subkey_7(kw8),
+.subkey_8(kw9),
+.subkey_9(kw10),
+.subkey_10(kw11),
+.subkey_11(kw12),
+.subkey_12(kw13),
+.subkey_13(kw14),
+.subkey_14(kw15),
+.subkey_15(kw16), //in from top level to feistal
+.cphrtxt (ciphertext_w) //out from feistal in to top level
 );	
 		
 			
