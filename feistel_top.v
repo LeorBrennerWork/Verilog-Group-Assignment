@@ -5,22 +5,22 @@
 
 module feistel_network (
     input wire [63:0] plntxt,
-    input wire [47:0] key_schdl_0,
-    input wire [47:0] key_schdl_1,
-    input wire [47:0] key_schdl_2,
-    input wire [47:0] key_schdl_3,
-    input wire [47:0] key_schdl_4,
-    input wire [47:0] key_schdl_5,
-    input wire [47:0] key_schdl_6,
-    input wire [47:0] key_schdl_7,
-    input wire [47:0] key_schdl_8,
-    input wire [47:0] key_schdl_9,
-    input wire [47:0] key_schdl_10,
-    input wire [47:0] key_schdl_11,
-    input wire [47:0] key_schdl_12,
-    input wire [47:0] key_schdl_13,
-    input wire [47:0] key_schdl_14,
-    input wire [47:0] key_schdl_15,
+    input wire [47:0] subkey_0,
+    input wire [47:0] subkey_1,
+    input wire [47:0] subkey_2,
+    input wire [47:0] subkey_3,
+    input wire [47:0] subkey_4,
+    input wire [47:0] subkey_5,
+    input wire [47:0] subkey_6,
+    input wire [47:0] subkey_7,
+    input wire [47:0] subkey_8,
+    input wire [47:0] subkey_9,
+    input wire [47:0] subkey_10,
+    input wire [47:0] subkey_11,
+    input wire [47:0] subkey_12,
+    input wire [47:0] subkey_13,
+    input wire [47:0] subkey_14,
+    input wire [47:0] subkey_15,
     output wire [63:0] cphrtxt
 );
 
@@ -29,24 +29,24 @@ wire [63:0] first_permuted, post_final_round;
 wire [31:0] l_plntxt [0:14], r_plntxt [0:14];
 wire [31:0] l_cphrtxt [0:15], r_cphrtxt [0:15];
 
-assign key_schedule[0] = key_schdl_0
-assign key_schedule[1] = key_schdl_1
-assign key_schedule[2] = key_schdl_2
-assign key_schedule[3] = key_schdl_3
-assign key_schedule[4] = key_schdl_4
-assign key_schedule[5] = key_schdl_5
-assign key_schedule[6] = key_schdl_6
-assign key_schedule[7] = key_schdl_7
-assign key_schedule[8] = key_schdl_8
-assign key_schedule[9] = key_schdl_9
-assign key_schedule[10] = key_schdl_10
-assign key_schedule[11] = key_schdl_11
-assign key_schedule[12] = key_schdl_12
-assign key_schedule[13] = key_schdl_13
-assign key_schedule[14] = key_schdl_14
-assign key_schedule[15] = key_schdl_15
+assign key_schedule[0] = subkey_0
+assign key_schedule[1] = subkey_1
+assign key_schedule[2] = subkey_2
+assign key_schedule[3] = subkey_3
+assign key_schedule[4] = subkey_4
+assign key_schedule[5] = subkey_5
+assign key_schedule[6] = subkey_6
+assign key_schedule[7] = subkey_7
+assign key_schedule[8] = subkey_8
+assign key_schedule[9] = subkey_9
+assign key_schedule[10] = subkey_10
+assign key_schedule[11] = subkey_11
+assign key_schedule[12] = subkey_12
+assign key_schedule[13] = subkey_13
+assign key_schedule[14] = subkey_14
+assign key_schedule[15] = subkey_15
 
-//Syncs inputs of rounds x+1 with outputs of rounds x
+//Syncs inputs of rounds x+1 with outputs of rounds x - not sure if necessary
 assign l_plntxt[0] = l_cphrtxt[0]
 assign l_plntxt[1] = l_cphrtxt[1]
 assign l_plntxt[2] = l_cphrtxt[2]
@@ -82,14 +82,10 @@ assign r_plntxt[14] = r_cphrtxt[14]
 
 
 initial_permutation u_initial_permutation (
-    .clk(clk),
-    .rst(rst),
     .plntxt(plntxt)
     .permuted(first_permuted)
 );
 round round_1 (
-    .clk(clk),
-    .rst(rst),
     .subkey(key_schedule[0]),
     .in_left(first_permuted[63:32]),
     .in_right(first_permuted[31:0]),
@@ -97,8 +93,6 @@ round round_1 (
     .out_right(r_cphrtxt[0])
 );
 round round_2 (
-    .clk(clk),
-    .rst(rst),
     .subkey(key_schedule[1]),
     .in_left(l_plntxt[0]),
     .in_right(r_plntxt[0]),
@@ -106,8 +100,6 @@ round round_2 (
     .out_right(r_cphrtxt[1])
 );
 round round_3 (
-    .clk(clk),
-    .rst(rst),
     .subkey(key_schedule[2]),
     .in_left(l_plntxt[1]),
     .in_right(r_plntxt[1]),
@@ -115,8 +107,6 @@ round round_3 (
     .out_right(r_cphrtxt[2])
 );
 round round_4 (
-    .clk(clk),
-    .rst(rst),
     .subkey(key_schedule[3]),
     .in_left(l_plntxt[2]),
     .in_right(r_plntxt[2]),
@@ -124,8 +114,6 @@ round round_4 (
     .out_right(r_cphrtxt[3])
 );
 round round_5 (
-    .clk(clk),
-    .rst(rst),
     .subkey(key_schedule[4]),
     .in_left(l_plntxt[3]),
     .in_right(r_plntxt[3]),
@@ -133,8 +121,6 @@ round round_5 (
     .out_right(r_cphrtxt[4])
 );
 round round_6 (
-    .clk(clk),
-    .rst(rst),
     .subkey(key_schedule[5]),
     .in_left(l_plntxt[4]),
     .in_right(r_plntxt[4]),
@@ -142,8 +128,6 @@ round round_6 (
     .out_right(r_cphrtxt[5])
 );
 round round_7 (
-    .clk(clk),
-    .rst(rst),
     .subkey(key_schedule[6]),
     .in_left(l_plntxt[5]),
     .in_right(r_plntxt[5]),
@@ -151,8 +135,6 @@ round round_7 (
     .out_right(r_cphrtxt[6])
 );
 round round_8 (
-    .clk(clk),
-    .rst(rst),
     .subkey(key_schedule[7]),
     .in_left(l_plntxt[6]),
     .in_right(r_plntxt[6]),
@@ -160,8 +142,6 @@ round round_8 (
     .out_right(r_cphrtxt[7])
 );
 round round_9 (
-    .clk(clk),
-    .rst(rst),
     .subkey(key_schedule[8]),
     .in_left(l_plntxt[7]),
     .in_right(r_plntxt[7]),
@@ -169,8 +149,6 @@ round round_9 (
     .out_right(r_cphrtxt[8])
 );
 round round_10 (
-    .clk(clk),
-    .rst(rst),
     .subkey(key_schedule[9]),
     .in_left(l_plntxt[8]),
     .in_right(r_plntxt[8]),
@@ -178,8 +156,6 @@ round round_10 (
     .out_right(r_cphrtxt[9])
 );
 round round_11 (
-    .clk(clk),
-    .rst(rst),
     .subkey(key_schedule[10]),
     .in_left(l_plntxt[9]),
     .in_right(r_plntxt[9]),
@@ -187,8 +163,6 @@ round round_11 (
     .out_right(r_cphrtxt[10])
 );
 round round_12 (
-    .clk(clk),
-    .rst(rst),
     .subkey(key_schedule[11]),
     .in_left(l_plntxt[10]),
     .in_right(r_plntxt[10]),
@@ -196,8 +170,6 @@ round round_12 (
     .out_right(r_cphrtxt[11])
 );
 round round_13 (
-    .clk(clk),
-    .rst(rst),
     .subkey(key_schedule[12]),
     .in_left(l_plntxt[11]),
     .in_right(r_plntxt[11]),
@@ -205,8 +177,6 @@ round round_13 (
     .out_right(r_cphrtxt[12])
 );
 round round_14 (
-    .clk(clk),
-    .rst(rst),
     .subkey(key_schedule[13]),
     .in_left(l_plntxt[12]),
     .in_right(r_plntxt[12]),
@@ -214,8 +184,6 @@ round round_14 (
     .out_right(r_cphrtxt[13])
 );
 round round_15 (
-    .clk(clk),
-    .rst(rst),
     .subkey(key_schedule[14]),
     .in_left(l_plntxt[13]),
     .in_right(r_plntxt[13]),
@@ -223,18 +191,14 @@ round round_15 (
     .out_right(r_cphrtxt[14])
 );
 round round_16 (
-    .clk(clk),
-    .rst(rst),
     .subkey(key_schedule[15]),
     .in_left(l_plntxt[14]),
     .in_right(r_plntxt[14]),
     .out_left(l_cphrtxt[15]),
     .out_right(r_cphrtxt[15])
 );
-reverse_permutation u_reverse_permutation (
-    .clk(clk),
-    .rst(rst),
-    .last_round(post_final_round)
+inv_permutation u_inv_permutation (
+    .last_round_output(post_final_round)
     .permuted(cphrtxt)    
 );
 
