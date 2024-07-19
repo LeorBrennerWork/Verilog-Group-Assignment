@@ -9,28 +9,28 @@ module round (
     output wire [31:0] out_left, out_right
 );
 
-wire [47:0] out_e_function;
-wire [31:0] p_out;
+wire [47:0] e_out;
+wire [31:0] p_in, p_out;
 wire [47:0] sbox_in;
+wire [31:0] sbox_out;
 wire [47:0] key_schedule [0:15];
 
-assign out_left <= in_right;
-assign out_right <= in_left ^ p_out;
+assign sbox_in = e_out ^ subkey;
+assign p_in = sbox_out;
+assign out_left = in_right;
+assign out_right = in_left ^ p_out;
 
 e_function u_e_function (
-    .clk(clk), 
-    .rst(rst),
     .right(in_right),
-    .selected(out_e_function)
+    .selected(e_out)
 );
     sbox u_sbox (  //need to get I/Os for the sbox function
-    .clk(clk), 
-    .rst(rst),
-    .input(sbox_in)
+    .input(sbox_in),
+    .output(sbox_out)
 );
     p_function u_p_function ( //need to get I/Os for the p function
-    .clk(clk), 
-    .rst(rst),
-    .out(p_out)
+    .input(p_in),
+    .output(p_out)
 );
+
 endmodule
