@@ -4,8 +4,8 @@
 `default_nettype none
 
 module inv_permutation(
-    input [63:0] last_round_output,
-    output [63:0] permuted
+    input wire [63:0] last_round_output,
+    output wire [63:0] permuted
 );
 
 assign permuted[0] = last_round_output[39];   
