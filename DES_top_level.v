@@ -50,22 +50,22 @@ register3 iner_register3
 key_schedule iner_key
 (
 .key (key_w), //in from top level to key_schedule
-.k1 (kw1),
-.k2(kw2),
-.k3(kw3),
-.k4(kw4),
-.k5(kw5),
-.k6(kw6),
-.k7(kw7),
-.k8(kw8),
-.k9(kw9),
-.k10(kw10),
-.k11(kw11),
-.k12(kw12),
-.k13(kw13),
-.k14(kw14),
-.k15(kw15),
-.k16(kw16)   //out from key_schedule to top level
+.subkey0 (kw1),
+.subkey1(kw2),
+.subkey2(kw3),
+.subkey3(kw4),
+.subkey4(kw5),
+.subkey5(kw6),
+.subkey6(kw7),
+.subkey7(kw8),
+.subkey8(kw9),
+.subkey9(kw10),
+.subkey10(kw11),
+.subkey11(kw12),
+.subkey12(kw13),
+.subkey13(kw14),
+.subkey14(kw15),
+.subkey15(kw16)   //out from key_schedule to top level
 );
 
 feistel iner_feistel
