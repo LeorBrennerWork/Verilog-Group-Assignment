@@ -18,7 +18,7 @@ module DES
  wire [63:0] plaintext_w, ciphertext_w, key_w; //wires from registers and feistal and key_schedule 
  wire [47:0] kw1,kw2,kw3,kw4,kw5,kw6,kw7,kw8,kw9,kw10,kw11,kw12,kw13,kw14,kw15,kw16; //wires from registers and feistal and key_schedule 
 
-register1 iner_register1
+register1 inner_register1
 (
 .clk (clk),		//in from top level to register1
 .reset (reset),	//in from top level to register1
@@ -28,7 +28,7 @@ register1 iner_register1
 
 );
 
-register2 iner_register2
+register2 inner_register2
 (
 .clk (clk),		//in from top level to register2 
 .reset (reset),	//in from top level to register2
@@ -39,7 +39,7 @@ register2 iner_register2
 
 );
 
-register3 iner_register3
+register3 inner_register3
 (
 .clk (clk),		//in from top level to register3
 .reset (reset),	//in from top level to register3
@@ -48,7 +48,7 @@ register3 iner_register3
 
 );
 
-KeySchedule iner_key
+KeySchedule inner_key
 (
 .key (key_w), //in from top level to key_schedule
 .subkey0 (kw1),
@@ -69,7 +69,7 @@ KeySchedule iner_key
 .subkey15(kw16)   //out from key_schedule to top level
 );
 
-feistel_network iner_feistel
+feistel_network inner_feistel
 (
 .plntxt (plaintext_w), //in from top level to feistal
 .subkey_0 (kw1),

@@ -2,7 +2,7 @@
 module tb_DES();
 integer     data_file_in_tb;
 integer     statusD;
-reg  [63:0] plaintext, ciphertext, key;
+reg  [63:0] plaintext, ciphertext, key, ciphertext_out;
 reg         clk  = 0;
 reg load;
 
@@ -12,18 +12,16 @@ reg reset  ;
 reg [8*4-1:0] test = "    ";
 
 always
-  #10 clk = ~ clk;
+  #5 clk = ~ clk;
   
 initial 
   data_file_in_tb = $fopen("test_vector_10.txt", "r");
 
 initial 
 begin
-  repeat (2) @ (posedge clk);
   reset = 1;
   load =0;
-
-  #200 reset = 0; 
+  #24 reset = 0; 
   load = 1;
 	    
   while ( ! $feof(data_file_in_tb)) 
@@ -31,7 +29,7 @@ begin
     @ (posedge clk);
 	if (load)
 	begin
-		//ciphertext_out = data_out;	
+		ciphertext_out = data_out;	
 		
 		statusD = $fscanf(data_file_in_tb,"%h %h %h\n" , key, plaintext, ciphertext );
 		if (ciphertext_out == ciphertext)
@@ -44,9 +42,9 @@ begin
   end
 end
 
-DES DUT
 
-(
+
+DES DUT (
 .clk    (clk   ),
 .reset  (reset ),
 .key_in   (key  ),

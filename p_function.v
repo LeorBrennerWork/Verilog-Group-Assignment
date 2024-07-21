@@ -2,8 +2,8 @@
 //P - function
 `default_nettype none 
 module p_function(
-    input  wire [32:1] A,
-    output wire [32:1] Y
+    input  wire [1:32] A,
+    output wire [1:32] Y
 );
 
 assign Y[ 1 ] = A[16];
