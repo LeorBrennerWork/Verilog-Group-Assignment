@@ -57,8 +57,8 @@ SBox8 u_SBox8 (
     .out(sbox_out[3:0])
 );
 p_function u_p_function ( //need to get I/Os for the p function
-    .input(p_in),
-    .output(p_out)
+    .A(p_in),
+    .Y(p_out)
 );
 
 endmodule
