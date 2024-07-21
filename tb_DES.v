@@ -2,7 +2,7 @@
 module tb_DES();
 integer     data_file_in_tb;
 integer     statusD;
-reg  [63:0] plaintext, ciphertext, key, ciphertext_out;
+reg  [63:0] plaintext, ciphertext, key;
 reg         clk  = 0;
 reg load;
 
@@ -28,11 +28,10 @@ begin
   begin
     @ (posedge clk);
 	if (load)
-	begin
-		ciphertext_out = data_out;	
-		
+	begin		
 		statusD = $fscanf(data_file_in_tb,"%h %h %h\n" , key, plaintext, ciphertext );
-		if (ciphertext_out == ciphertext)
+		repeat (10) @ (posedge clk);
+		if (data_out == ciphertext)
 			test = "PASS";
 		else
 			test = "FAIL";
