@@ -29,60 +29,60 @@ wire [63:0] first_permuted, post_final_round;
 wire [31:0] l_plntxt [0:14], r_plntxt [0:14];
 wire [31:0] l_cphrtxt [0:15], r_cphrtxt [0:15];
 
-assign key_schedule[0] = subkey_0
-assign key_schedule[1] = subkey_1
-assign key_schedule[2] = subkey_2
-assign key_schedule[3] = subkey_3
-assign key_schedule[4] = subkey_4
-assign key_schedule[5] = subkey_5
-assign key_schedule[6] = subkey_6
-assign key_schedule[7] = subkey_7
-assign key_schedule[8] = subkey_8
-assign key_schedule[9] = subkey_9
-assign key_schedule[10] = subkey_10
-assign key_schedule[11] = subkey_11
-assign key_schedule[12] = subkey_12
-assign key_schedule[13] = subkey_13
-assign key_schedule[14] = subkey_14
-assign key_schedule[15] = subkey_15
+    assign key_schedule[0] = subkey_0;
+    assign key_schedule[1] = subkey_1;
+    assign key_schedule[2] = subkey_2;
+    assign key_schedule[3] = subkey_3;
+    assign key_schedule[4] = subkey_4;
+    assign key_schedule[5] = subkey_5;
+    assign key_schedule[6] = subkey_6;
+    assign key_schedule[7] = subkey_7;
+    assign key_schedule[8] = subkey_8;
+    assign key_schedule[9] = subkey_9;
+    assign key_schedule[10] = subkey_10;
+    assign key_schedule[11] = subkey_11;
+    assign key_schedule[12] = subkey_12;
+    assign key_schedule[13] = subkey_13;
+    assign key_schedule[14] = subkey_14;
+    assign key_schedule[15] = subkey_15;
 
 //Syncs inputs of rounds x+1 with outputs of rounds x - not sure if necessary
-assign l_plntxt[0] = l_cphrtxt[0]
-assign l_plntxt[1] = l_cphrtxt[1]
-assign l_plntxt[2] = l_cphrtxt[2]
-assign l_plntxt[3] = l_cphrtxt[3]
-assign l_plntxt[4] = l_cphrtxt[4]
-assign l_plntxt[5] = l_cphrtxt[5]
-assign l_plntxt[6] = l_cphrtxt[6]
-assign l_plntxt[7] = l_cphrtxt[7]
-assign l_plntxt[8] = l_cphrtxt[8]
-assign l_plntxt[9] = l_cphrtxt[9]
-assign l_plntxt[10] = l_cphrtxt[10]
-assign l_plntxt[11] = l_cphrtxt[11]
-assign l_plntxt[12] = l_cphrtxt[12]
-assign l_plntxt[13] = l_cphrtxt[13]
-assign l_plntxt[14] = l_cphrtxt[14]
+    assign l_plntxt[0] = l_cphrtxt[0];
+    assign l_plntxt[1] = l_cphrtxt[1];
+    assign l_plntxt[2] = l_cphrtxt[2];
+    assign l_plntxt[3] = l_cphrtxt[3];
+    assign l_plntxt[4] = l_cphrtxt[4];
+    assign l_plntxt[5] = l_cphrtxt[5];
+    assign l_plntxt[6] = l_cphrtxt[6];
+    assign l_plntxt[7] = l_cphrtxt[7];
+    assign l_plntxt[8] = l_cphrtxt[8];
+    assign l_plntxt[9] = l_cphrtxt[9];
+    assign l_plntxt[10] = l_cphrtxt[10];
+    assign l_plntxt[11] = l_cphrtxt[11];
+    assign l_plntxt[12] = l_cphrtxt[12];
+    assign l_plntxt[13] = l_cphrtxt[13];
+    assign l_plntxt[14] = l_cphrtxt[14];
 
-assign r_plntxt[0] = r_cphrtxt[0]
-assign r_plntxt[1] = r_cphrtxt[1]
-assign r_plntxt[2] = r_cphrtxt[2]
-assign r_plntxt[3] = r_cphrtxt[3]
-assign r_plntxt[4] = r_cphrtxt[4]
-assign r_plntxt[5] = r_cphrtxt[5]
-assign r_plntxt[6] = r_cphrtxt[6]
-assign r_plntxt[7] = r_cphrtxt[7]
-assign r_plntxt[8] = r_cphrtxt[8]
-assign r_plntxt[9] = r_cphrtxt[9]
-assign r_plntxt[10] = r_cphrtxt[10]
-assign r_plntxt[11] = r_cphrtxt[11]
-assign r_plntxt[12] = r_cphrtxt[12]
-assign r_plntxt[13] = r_cphrtxt[13]
-assign r_plntxt[14] = r_cphrtxt[14]
+    assign r_plntxt[0] = r_cphrtxt[0];
+    assign r_plntxt[1] = r_cphrtxt[1];
+    assign r_plntxt[2] = r_cphrtxt[2];
+    assign r_plntxt[3] = r_cphrtxt[3];
+    assign r_plntxt[4] = r_cphrtxt[4];
+    assign r_plntxt[5] = r_cphrtxt[5];
+    assign r_plntxt[6] = r_cphrtxt[6];
+    assign r_plntxt[7] = r_cphrtxt[7];
+    assign r_plntxt[8] = r_cphrtxt[8];
+    assign r_plntxt[9] = r_cphrtxt[9];
+    assign r_plntxt[10] = r_cphrtxt[10];
+    assign r_plntxt[11] = r_cphrtxt[11];
+    assign r_plntxt[12] = r_cphrtxt[12];
+    assign r_plntxt[13] = r_cphrtxt[13];
+    assign r_plntxt[14] = r_cphrtxt[14];
 
 
 
 initial_permutation u_initial_permutation (
-    .plntxt(plntxt)
+    .plntxt(plntxt),
     .permuted(first_permuted)
 );
 round round_1 (
@@ -198,7 +198,7 @@ round round_16 (
     .out_right(r_cphrtxt[15])
 );
 inv_permutation u_inv_permutation (
-    .last_round_output(post_final_round)
+    .last_round_output(post_final_round),
     .permuted(cphrtxt)    
 );
 
