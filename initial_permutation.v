@@ -4,8 +4,8 @@
 `default_nettype none
 
 module initial_permutation(
-    input [63:0] plaintext,
-    output [63:0] permuted
+    input wire [63:0] plaintext,
+    output wire [63:0] permuted
 );
 
 assign permuted[0] = plaintext[57];   
