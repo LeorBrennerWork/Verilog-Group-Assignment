@@ -3,8 +3,8 @@
 `timescale 1 ns / 1 ps
 
 module KeySchedule(
-	input wire key,
-    input [55:0] pc1_key,
+	input wire [63:0] key,
+    
 	output [47:0] subkey0,
     output [47:0] subkey1,
     output [47:0] subkey2,
@@ -22,7 +22,7 @@ module KeySchedule(
     output [47:0] subkey14,
     output [47:0] subkey15
 );
-
+	wire [55:0] pc1_key;
     wire [27:0] C [16:0];
     wire [27:0] D [16:0];
     wire [55:0] CD [15:0];
@@ -111,7 +111,7 @@ module KeySchedule(
 PC1 PC1_in
 (
 .key (key),	//in from top level to PC1
-.pc1_key (pc1_key_w)	//output from pc1 to KeySchedule 
+.pc1_key (pc1_key)	//output from pc1 to KeySchedule 
 );	
 	
 

@@ -79,10 +79,10 @@ wire [31:0] l_cphrtxt [0:15], r_cphrtxt [0:15];
     assign r_plntxt[13] = r_cphrtxt[13];
     assign r_plntxt[14] = r_cphrtxt[14];
 
-
+	assign post_final_round = {l_cphrtxt[15], r_cphrtxt[15]};
 
 initial_permutation u_initial_permutation (
-    .plntxt(plntxt),
+    .plaintext(plntxt),
     .permuted(first_permuted)
 );
 round round_1 (

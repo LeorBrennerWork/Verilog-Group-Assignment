@@ -11,10 +11,10 @@ input wire	[63:0] ciphertext ,
 output reg [63:0] data_out
 );
 
-always @(posedge clk or posedge reset)
+always @(posedge clk)
 	if (reset)
-		data_out = 0;
+		data_out <= 0;
 	else
-		data_out = ciphertext  ;
+		data_out <= ciphertext  ;
 	
 endmodule

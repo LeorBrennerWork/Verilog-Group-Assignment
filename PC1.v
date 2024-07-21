@@ -2,7 +2,7 @@
 //shmuel Afelbaum
 //18.07.2024
 module PC1 (
-    input [63:0] key,
+    input [64:1] key,
     output [55:0] pc1_key
 );
 

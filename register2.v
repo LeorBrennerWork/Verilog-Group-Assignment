@@ -12,12 +12,12 @@ input wire	[63:0]  data_in,
 output reg [63:0] plaintext
 );
 
-always @(posedge clk or posedge reset)
+always @(posedge clk)
 	if (reset)
-		plaintext =0;
+		plaintext <=0;
 	else
 		if (load)
-			plaintext = data_in;
+		plaintext <= data_in;
 
 			
 endmodule

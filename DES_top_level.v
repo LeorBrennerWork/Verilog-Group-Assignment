@@ -10,12 +10,13 @@ module DES
  input wire	[63:0]  key_in,	  //Entrances to Top Label
  input wire [63:0]  data_in , //Entrances to Top Label
  
- input wire [63:0] plaintext_w, ciphertext_w, key_w, //wires from registers and feistal and key_schedule 
- input wire  [47:0] kw1,kw2,kw3,kw4,kw5,kw6,kw7,kw8,kw9,kw10,kw11,kw12,kw13,kw14,kw15,kw16, //wires from registers and feistal and key_schedule 
+
  
  output wire [63:0] data_out	//Exit from top level
  
 );
+ wire [63:0] plaintext_w, ciphertext_w, key_w; //wires from registers and feistal and key_schedule 
+ wire [47:0] kw1,kw2,kw3,kw4,kw5,kw6,kw7,kw8,kw9,kw10,kw11,kw12,kw13,kw14,kw15,kw16; //wires from registers and feistal and key_schedule 
 
 register1 iner_register1
 (
@@ -47,7 +48,7 @@ register3 iner_register3
 
 );
 
-key_schedule iner_key
+KeySchedule iner_key
 (
 .key (key_w), //in from top level to key_schedule
 .subkey0 (kw1),
@@ -68,7 +69,7 @@ key_schedule iner_key
 .subkey15(kw16)   //out from key_schedule to top level
 );
 
-feistel iner_feistel
+feistel_network iner_feistel
 (
 .plntxt (plaintext_w), //in from top level to feistal
 .subkey_0 (kw1),

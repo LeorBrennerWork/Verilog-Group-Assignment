@@ -13,10 +13,10 @@ output reg [63:0] key_r
 );
 
 
-always @(posedge clk or posedge reset)
+always @(posedge clk )
 	if (reset)
-		key_r = 0;
+		key_r <= 0;
 	else
 		if (load)
-		key_r = key_in;				
+		key_r <= key_in;				
 endmodule
