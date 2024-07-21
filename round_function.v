@@ -24,11 +24,39 @@ e_function u_e_function (
     .right(in_right),
     .selected(e_out)
 );
-    sbox u_sbox (  //need to get I/Os for the sbox function
-    .input(sbox_in),
-    .output(sbox_out)
+SBox1 u_SBox1 (
+    .in(sbox_in[47:42]),
+    .out(sbox_out[31:28])
 );
-    p_function u_p_function ( //need to get I/Os for the p function
+SBox2 u_SBox2 (
+    .in(sbox_in[41:36]),
+    .out(sbox_out[27:24])
+);
+SBox3 u_SBox3 (
+    .in(sbox_in[35:30]),
+    .out(sbox_out[23:20])
+);
+SBox4 u_SBox4 (
+    .in(sbox_in[29:24]),
+    .out(sbox_out[19:16])
+);
+SBox5 u_SBox5 (
+    .in(sbox_in[23:18]),
+    .out(sbox_out[15:12])
+);
+SBox6 u_SBox6 (
+    .in(sbox_in[17:12]),
+    .out(sbox_out[11:8])
+);
+SBox7 u_SBox7 (
+    .in(sbox_in[11:6]),
+    .out(sbox_out[7:4])
+);
+SBox8 u_SBox8 (
+    .in(sbox_in[5:0]),
+    .out(sbox_out[3:0])
+);
+p_function u_p_function ( //need to get I/Os for the p function
     .input(p_in),
     .output(p_out)
 );
