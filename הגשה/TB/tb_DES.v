@@ -12,7 +12,7 @@ reg reset  ;
 reg [8*4-1:0] test = "    ";
 
 always
-  #5 clk = ~ clk;
+  #5 clk = ~ clk;// #33 clk = ~ clk; for gate level simultion we used 34ns 
   
 initial 
   data_file_in_tb = $fopen("test_vector_10.txt", "r");
