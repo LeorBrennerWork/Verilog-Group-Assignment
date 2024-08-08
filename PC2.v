@@ -1,9 +1,9 @@
-
+`default_nettype none 
 //shmuel Afelbaum
 //18.07.2024
 module PC2 (
-    input [1:56] pc2_key,
-    output [47:0] subkey
+    input wire [1:56] pc2_key,
+    output wire [47:0] subkey
 );
 
 assign subkey[47] = pc2_key[14];

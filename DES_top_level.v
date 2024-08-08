@@ -39,14 +39,7 @@ register2 inner_register2
 
 );
 
-register3 inner_register3
-(
-.clk (clk),		//in from top level to register3
-.reset (reset),	//in from top level to register3
-.ciphertext (ciphertext_w), //in from top level to register3
-.data_out (data_out) //out from register3 out from top level
 
-);
 
 KeySchedule inner_key
 (
@@ -90,7 +83,15 @@ feistel_network inner_feistel
 .subkey_15(kw16), //in from top level to feistal
 .cphrtxt (ciphertext_w) //out from feistal in to top level
 );	
-		
+
+register3 inner_register3
+(
+.clk (clk),		//in from top level to register3
+.reset (reset),	//in from top level to register3
+.ciphertext (ciphertext_w), //in from top level to register3
+.data_out (data_out) //out from register3 out from top level
+
+);	
 			
 endmodule
 

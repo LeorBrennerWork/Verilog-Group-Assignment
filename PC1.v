@@ -1,9 +1,10 @@
 
 //shmuel Afelbaum
 //18.07.2024
+`default_nettype none 
 module PC1 (
-    input [1:64] key,
-    output [55:0] pc1_key
+    input wire [1:64] key,
+    output  wire[55:0] pc1_key
 );
 
     assign pc1_key[55] = key[57];

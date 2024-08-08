@@ -1,6 +1,6 @@
 module SBox7 (
-    input [5:0] in,
-    output [3:0] out
+    input wire  [5:0] in,
+    output wire[3:0] out
 );
     wire [1:0] row;
     wire [3:0] col;

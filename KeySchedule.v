@@ -1,26 +1,26 @@
 //Shmuel Apfelbaum/yinon zadok
-
+`default_nettype none 
 `timescale 1 ns / 1 ps
 
 module KeySchedule(
 	input wire [63:0] key,
     
-	output [47:0] subkey0,
-    output [47:0] subkey1,
-    output [47:0] subkey2,
-    output [47:0] subkey3,
-    output [47:0] subkey4,
-    output [47:0] subkey5,
-    output [47:0] subkey6,
-    output [47:0] subkey7,
-    output [47:0] subkey8,
-    output [47:0] subkey9,
-    output [47:0] subkey10,
-    output [47:0] subkey11,
-    output [47:0] subkey12,
-    output [47:0] subkey13,
-    output [47:0] subkey14,
-    output [47:0] subkey15
+	output wire [47:0] subkey0,
+    output wire[47:0] subkey1,
+    output wire[47:0] subkey2,
+    output wire[47:0] subkey3,
+    output wire[47:0] subkey4,
+    output wire[47:0] subkey5,
+    output wire[47:0] subkey6,
+    output wire[47:0] subkey7,
+    output wire[47:0] subkey8,
+    output wire[47:0] subkey9,
+    output wire[47:0] subkey10,
+    output wire[47:0] subkey11,
+    output wire[47:0] subkey12,
+    output wire[47:0] subkey13,
+    output wire[47:0] subkey14,
+    output wire[47:0] subkey15
 );
 	wire [55:0] pc1_key;
     wire [27:0] C [16:0];
