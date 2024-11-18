@@ -1,0 +1,309 @@
+
+*** Running vivado
+    with args -log DES.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source DES.tcl
+
+
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source DES.tcl -notrace
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 565.965 ; gain = 181.375
+Command: read_checkpoint -auto_incremental -incremental {C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/vivado/vivado.srcs/utils_1/imports/synth_1/DES.dcp}
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/vivado/vivado.srcs/utils_1/imports/synth_1/DES.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top DES -part xc7a15tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a15t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a15t'
+INFO: [Device 21-403] Loading part xc7a15tcsg324-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 7980
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1399.953 ; gain = 439.055
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'DES' [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/DES_top_level.v:4]
+INFO: [Synth 8-6157] synthesizing module 'register1' [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/register1.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'register1' (0#1) [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/register1.v:5]
+INFO: [Synth 8-6157] synthesizing module 'register2' [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/register2.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'register2' (0#1) [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/register2.v:5]
+INFO: [Synth 8-6157] synthesizing module 'KeySchedule' [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/KeySchedule.v:5]
+INFO: [Synth 8-6157] synthesizing module 'PC1' [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/PC1.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'PC1' (0#1) [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/PC1.v:5]
+INFO: [Synth 8-6157] synthesizing module 'left_shift_1' [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/left_shift_1.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'left_shift_1' (0#1) [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/left_shift_1.v:3]
+INFO: [Synth 8-6157] synthesizing module 'left_shift_2' [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/left_shift_2.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'left_shift_2' (0#1) [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/left_shift_2.v:3]
+INFO: [Synth 8-6157] synthesizing module 'PC2' [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/PC2.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'PC2' (0#1) [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/PC2.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'KeySchedule' (0#1) [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/KeySchedule.v:5]
+INFO: [Synth 8-6157] synthesizing module 'feistel_network' [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/feistel_top.v:6]
+INFO: [Synth 8-6157] synthesizing module 'initial_permutation' [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/initial_permutation.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'initial_permutation' (0#1) [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/initial_permutation.v:6]
+INFO: [Synth 8-6157] synthesizing module 'round' [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/round_function.v:6]
+INFO: [Synth 8-6157] synthesizing module 'e_function' [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/e_function.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'e_function' (0#1) [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/e_function.v:6]
+INFO: [Synth 8-6157] synthesizing module 'SBox1' [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/s-box1.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'SBox1' (0#1) [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/s-box1.v:2]
+INFO: [Synth 8-6157] synthesizing module 'SBox2' [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/s-box2.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'SBox2' (0#1) [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/s-box2.v:2]
+INFO: [Synth 8-6157] synthesizing module 'SBox3' [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/s-box3.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'SBox3' (0#1) [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/s-box3.v:2]
+INFO: [Synth 8-6157] synthesizing module 'SBox4' [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/s-box4.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'SBox4' (0#1) [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/s-box4.v:2]
+INFO: [Synth 8-6157] synthesizing module 'SBox5' [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/s-box5.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'SBox5' (0#1) [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/s-box5.v:2]
+INFO: [Synth 8-6157] synthesizing module 'SBox6' [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/s-box6.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'SBox6' (0#1) [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/s-box6.v:2]
+INFO: [Synth 8-6157] synthesizing module 'SBox7' [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/s-box7.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'SBox7' (0#1) [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/s-box7.v:1]
+INFO: [Synth 8-6157] synthesizing module 'SBox8' [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/s-box8.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'SBox8' (0#1) [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/s-box8.v:2]
+INFO: [Synth 8-6157] synthesizing module 'p_function' [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/p_function.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'p_function' (0#1) [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/p_function.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'round' (0#1) [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/round_function.v:6]
+INFO: [Synth 8-6157] synthesizing module 'inv_permutation' [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/inv_permutation.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'inv_permutation' (0#1) [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/inv_permutation.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'feistel_network' (0#1) [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/feistel_top.v:6]
+INFO: [Synth 8-6157] synthesizing module 'register3' [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/register3.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'register3' (0#1) [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/register3.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'DES' (0#1) [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/הגשה/קבצים/DES_top_level.v:4]
+WARNING: [Synth 8-7129] Port pc2_key[9] in module PC2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc2_key[18] in module PC2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc2_key[22] in module PC2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc2_key[25] in module PC2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc2_key[35] in module PC2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc2_key[38] in module PC2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc2_key[43] in module PC2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port pc2_key[54] in module PC2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[8] in module PC1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[16] in module PC1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[24] in module PC1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[32] in module PC1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[40] in module PC1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[48] in module PC1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[56] in module PC1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[64] in module PC1 is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1511.398 ; gain = 550.500
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1511.398 ; gain = 550.500
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1511.398 ; gain = 550.500
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.058 . Memory (MB): peak = 1511.398 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/vivado/vivado.srcs/constrs_1/new/timing.xdc]
+Finished Parsing XDC File [C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/vivado/vivado.srcs/constrs_1/new/timing.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1610.203 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+The system cannot find the path specified.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1610.203 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1610.203 ; gain = 649.305
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a15tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1610.203 ; gain = 649.305
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1610.203 ; gain = 649.305
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1610.203 ; gain = 649.305
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input     48 Bit         XORs := 16    
+	   2 Input     32 Bit         XORs := 16    
++---Registers : 
+	               64 Bit    Registers := 3     
++---Muxes : 
+	  19 Input    4 Bit        Muxes := 128   
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 45 (col length:60)
+BRAMs: 50 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:43 ; elapsed = 00:00:46 . Memory (MB): peak = 1610.203 ; gain = 649.305
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:48 ; elapsed = 00:00:51 . Memory (MB): peak = 1610.203 ; gain = 649.305
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:25 ; elapsed = 00:01:28 . Memory (MB): peak = 1734.312 ; gain = 773.414
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:30 ; elapsed = 00:01:34 . Memory (MB): peak = 1939.164 ; gain = 978.266
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:38 ; elapsed = 00:01:42 . Memory (MB): peak = 1954.941 ; gain = 994.043
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:38 ; elapsed = 00:01:42 . Memory (MB): peak = 1954.941 ; gain = 994.043
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:38 ; elapsed = 00:01:42 . Memory (MB): peak = 1954.941 ; gain = 994.043
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:38 ; elapsed = 00:01:42 . Memory (MB): peak = 1954.941 ; gain = 994.043
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:38 ; elapsed = 00:01:42 . Memory (MB): peak = 1954.941 ; gain = 994.043
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:38 ; elapsed = 00:01:42 . Memory (MB): peak = 1954.941 ; gain = 994.043
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |BUFG |     1|
+|2     |LUT2 |    48|
+|3     |LUT3 |   192|
+|4     |LUT4 |   192|
+|5     |LUT5 |   320|
+|6     |LUT6 |   656|
+|7     |FDRE |   184|
+|8     |IBUF |   123|
+|9     |OBUF |    64|
++------+-----+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:38 ; elapsed = 00:01:42 . Memory (MB): peak = 1954.941 ; gain = 994.043
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:30 ; elapsed = 00:01:41 . Memory (MB): peak = 1954.941 ; gain = 895.238
+Synthesis Optimization Complete : Time (s): cpu = 00:01:38 ; elapsed = 00:01:42 . Memory (MB): peak = 1954.941 ; gain = 994.043
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1966.223 ; gain = 0.000
+WARNING: [Netlist 29-101] Netlist 'DES' is not ideal for floorplanning, since the cellview 'register1' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1969.941 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+The system cannot find the path specified.
+Synth Design complete | Checksum: 623efd52
+INFO: [Common 17-83] Releasing license: Synthesis
+64 Infos, 18 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:44 ; elapsed = 00:01:49 . Memory (MB): peak = 1969.941 ; gain = 1400.016
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1969.941 ; gain = 0.000
+[libprotobuf ERROR C:\w10\HEAD\src\ext\protobuf\build\lnx64\protobuf-3.7.1\src\google\protobuf\wire_format_lite.cc:611] String field 'HDMetricDBGroup.MetricMapEntry.value' contains invalid UTF-8 data when serializing a protocol buffer. Use the 'bytes' type if you intend to send raw bytes. 
+[libprotobuf ERROR C:\w10\HEAD\src\ext\protobuf\build\lnx64\protobuf-3.7.1\src\google\protobuf\wire_format_lite.cc:611] String field 'HDMetricDBGroup.MetricMapEntry.value' contains invalid UTF-8 data when serializing a protocol buffer. Use the 'bytes' type if you intend to send raw bytes. 
+[libprotobuf ERROR C:\w10\HEAD\src\ext\protobuf\build\lnx64\protobuf-3.7.1\src\google\protobuf\wire_format_lite.cc:611] String field 'HDMetricDBGroup.MetricMapEntry.value' contains invalid UTF-8 data when serializing a protocol buffer. Use the 'bytes' type if you intend to send raw bytes. 
+[libprotobuf ERROR C:\w10\HEAD\src\ext\protobuf\build\lnx64\protobuf-3.7.1\src\google\protobuf\wire_format_lite.cc:611] String field 'HDMetricDBGroup.MetricMapEntry.value' contains invalid UTF-8 data when serializing a protocol buffer. Use the 'bytes' type if you intend to send raw bytes. 
+[libprotobuf ERROR C:\w10\HEAD\src\ext\protobuf\build\lnx64\protobuf-3.7.1\src\google\protobuf\wire_format_lite.cc:611] String field 'HDMetricDBGroup.MetricMapEntry.value' contains invalid UTF-8 data when serializing a protocol buffer. Use the 'bytes' type if you intend to send raw bytes. 
+[libprotobuf ERROR C:\w10\HEAD\src\ext\protobuf\build\lnx64\protobuf-3.7.1\src\google\protobuf\wire_format_lite.cc:611] String field 'HDMetricDBGroup.MetricMapEntry.value' contains invalid UTF-8 data when serializing a protocol buffer. Use the 'bytes' type if you intend to send raw bytes. 
+[libprotobuf ERROR C:\w10\HEAD\src\ext\protobuf\build\lnx64\protobuf-3.7.1\src\google\protobuf\wire_format_lite.cc:611] String field 'HDMetricDBGroup.MetricMapEntry.value' contains invalid UTF-8 data when serializing a protocol buffer. Use the 'bytes' type if you intend to send raw bytes. 
+[libprotobuf ERROR C:\w10\HEAD\src\ext\protobuf\build\lnx64\protobuf-3.7.1\src\google\protobuf\wire_format_lite.cc:611] String field 'HDMetricDBGroup.MetricMapEntry.value' contains invalid UTF-8 data when serializing a protocol buffer. Use the 'bytes' type if you intend to send raw bytes. 
+[libprotobuf ERROR C:\w10\HEAD\src\ext\protobuf\build\lnx64\protobuf-3.7.1\src\google\protobuf\wire_format_lite.cc:611] String field 'HDMetricDBGroup.MetricMapEntry.value' contains invalid UTF-8 data when serializing a protocol buffer. Use the 'bytes' type if you intend to send raw bytes. 
+[libprotobuf ERROR C:\w10\HEAD\src\ext\protobuf\build\lnx64\protobuf-3.7.1\src\google\protobuf\wire_format_lite.cc:611] String field 'HDMetricDBGroup.MetricMapEntry.value' contains invalid UTF-8 data when serializing a protocol buffer. Use the 'bytes' type if you intend to send raw bytes. 
+[libprotobuf ERROR C:\w10\HEAD\src\ext\protobuf\build\lnx64\protobuf-3.7.1\src\google\protobuf\wire_format_lite.cc:611] String field 'HDMetricDBGroup.MetricMapEntry.value' contains invalid UTF-8 data when serializing a protocol buffer. Use the 'bytes' type if you intend to send raw bytes. 
+[libprotobuf ERROR C:\w10\HEAD\src\ext\protobuf\build\lnx64\protobuf-3.7.1\src\google\protobuf\wire_format_lite.cc:611] String field 'HDMetricDBGroup.MetricMapEntry.value' contains invalid UTF-8 data when serializing a protocol buffer. Use the 'bytes' type if you intend to send raw bytes. 
+[libprotobuf ERROR C:\w10\HEAD\src\ext\protobuf\build\lnx64\protobuf-3.7.1\src\google\protobuf\wire_format_lite.cc:611] String field 'HDMetricDBGroup.MetricMapEntry.value' contains invalid UTF-8 data when serializing a protocol buffer. Use the 'bytes' type if you intend to send raw bytes. 
+[libprotobuf ERROR C:\w10\HEAD\src\ext\protobuf\build\lnx64\protobuf-3.7.1\src\google\protobuf\wire_format_lite.cc:611] String field 'HDMetricDBGroup.MetricMapEntry.value' contains invalid UTF-8 data when serializing a protocol buffer. Use the 'bytes' type if you intend to send raw bytes. 
+[libprotobuf ERROR C:\w10\HEAD\src\ext\protobuf\build\lnx64\protobuf-3.7.1\src\google\protobuf\wire_format_lite.cc:611] String field 'HDMetricDBGroup.MetricMapEntry.value' contains invalid UTF-8 data when serializing a protocol buffer. Use the 'bytes' type if you intend to send raw bytes. 
+[libprotobuf ERROR C:\w10\HEAD\src\ext\protobuf\build\lnx64\protobuf-3.7.1\src\google\protobuf\wire_format_lite.cc:611] String field 'HDMetricDBGroup.MetricMapEntry.value' contains invalid UTF-8 data when serializing a protocol buffer. Use the 'bytes' type if you intend to send raw bytes. 
+[libprotobuf ERROR C:\w10\HEAD\src\ext\protobuf\build\lnx64\protobuf-3.7.1\src\google\protobuf\wire_format_lite.cc:611] String field 'HDMetricDBGroup.MetricMapEntry.value' contains invalid UTF-8 data when serializing a protocol buffer. Use the 'bytes' type if you intend to send raw bytes. 
+[libprotobuf ERROR C:\w10\HEAD\src\ext\protobuf\build\lnx64\protobuf-3.7.1\src\google\protobuf\wire_format_lite.cc:611] String field 'HDMetricDBGroup.MetricMapEntry.value' contains invalid UTF-8 data when serializing a protocol buffer. Use the 'bytes' type if you intend to send raw bytes. 
+[libprotobuf ERROR C:\w10\HEAD\src\ext\protobuf\build\lnx64\protobuf-3.7.1\src\google\protobuf\wire_format_lite.cc:611] String field 'HDMetricDBGroup.MetricMapEntry.value' contains invalid UTF-8 data when serializing a protocol buffer. Use the 'bytes' type if you intend to send raw bytes. 
+[libprotobuf ERROR C:\w10\HEAD\src\ext\protobuf\build\lnx64\protobuf-3.7.1\src\google\protobuf\wire_format_lite.cc:611] String field 'HDMetricDBGroup.MetricMapEntry.value' contains invalid UTF-8 data when serializing a protocol buffer. Use the 'bytes' type if you intend to send raw bytes. 
+[libprotobuf ERROR C:\w10\HEAD\src\ext\protobuf\build\lnx64\protobuf-3.7.1\src\google\protobuf\wire_format_lite.cc:611] String field 'HDMetricDBGroup.MetricMapEntry.value' contains invalid UTF-8 data when serializing a protocol buffer. Use the 'bytes' type if you intend to send raw bytes. 
+[libprotobuf ERROR C:\w10\HEAD\src\ext\protobuf\build\lnx64\protobuf-3.7.1\src\google\protobuf\wire_format_lite.cc:611] String field 'HDMetricDBGroup.MetricMapEntry.value' contains invalid UTF-8 data when serializing a protocol buffer. Use the 'bytes' type if you intend to send raw bytes. 
+[libprotobuf ERROR C:\w10\HEAD\src\ext\protobuf\build\lnx64\protobuf-3.7.1\src\google\protobuf\wire_format_lite.cc:611] String field 'HDMetricDBGroup.MetricMapEntry.value' contains invalid UTF-8 data when serializing a protocol buffer. Use the 'bytes' type if you intend to send raw bytes. 
+INFO: [Common 17-1381] The checkpoint 'C:/Users/USER/Documents/Leor Brenner/Verilog-Group-Assignment/vivado/vivado.runs/synth_1/DES.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file DES_utilization_synth.rpt -pb DES_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Aug  8 17:29:30 2024...
